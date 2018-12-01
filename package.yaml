@@ -1,0 +1,30 @@
+name: aoc18
+version: 0.1.0.0
+license: BSD3
+maintainer: ngyj <ngyj@cinnabar.fr>
+github: namigyj/aoc18
+author: ngyj (namigyj)
+copyright: 2018 ngyj
+category: Aoc
+extra-source-files:
+    - CHANGELOG.md
+
+ghc-options: -Wall
+
+dependencies:
+    - base >=4.11 && <4.12
+    - hspec
+    - containers
+
+library:
+    source-dirs: src
+    exposed-modules:
+        - Aoc18.Day1
+
+executable:
+    main: Main.hs
+    source-dirs: src
+    dependencies:
+        - aoc18
+        - optparse-applicative
+
