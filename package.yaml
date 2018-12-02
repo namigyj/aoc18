@@ -9,17 +9,19 @@ category: Aoc
 extra-source-files:
     - CHANGELOG.md
 
-ghc-options: -Wall
+ghc-options: -Wall -threaded
 
 dependencies:
     - base >=4.11 && <4.12
     - hspec
     - containers
+    - vector
 
 library:
     source-dirs: src
     exposed-modules:
         - Aoc18.Day1
+        - Aoc18.Day2
 
 executable:
     main: Main.hs

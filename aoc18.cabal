@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 4ece5e5e6b30aa71a981b747f2129e35151146be34dd6d392783873048662bf5
+-- hash: 8af3a2e85cfcc79d2bcc3f8c5b5fcc97a9c1f5f8b5b4b45656e3632b857af9e8
 
 name:           aoc18
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 library
   exposed-modules:
       Aoc18.Day1
+      Aoc18.Day2
   other-modules:
       Main
       Paths_aoc18
@@ -37,12 +38,14 @@ library
       base >=4.11 && <4.12
     , containers
     , hspec
+    , vector
   default-language: Haskell2010
 
 executable aoc18
   main-is: Main.hs
   other-modules:
       Aoc18.Day1
+      Aoc18.Day2
       Paths_aoc18
   hs-source-dirs:
       src
@@ -53,4 +56,5 @@ executable aoc18
     , containers
     , hspec
     , optparse-applicative
+    , vector
   default-language: Haskell2010

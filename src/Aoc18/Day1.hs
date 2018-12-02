@@ -1,7 +1,7 @@
 module Aoc18.Day1 where
 
 import Test.Hspec
-import Data.Set (member, insert, singleton, empty)
+import Data.Set (member, insert, empty)
 
 tests :: IO ()
 tests = hspec $ do
