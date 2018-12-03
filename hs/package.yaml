@@ -9,19 +9,27 @@ category: Aoc
 extra-source-files:
     - CHANGELOG.md
 
-ghc-options: -Wall -threaded
+ghc-options: -Wall -threaded -Wno-unused-do-bind
+repl-options: -script-ghci=".ghci"
 
 dependencies:
     - base >=4.11 && <4.12
     - hspec
     - containers
     - vector
+    - text
+    - attoparsec
+
+default-extensions:
+    - LambdaCase
+    - OverloadedStrings
 
 library:
     source-dirs: src
     exposed-modules:
         - Aoc18.Day1
         - Aoc18.Day2
+        - Aoc18.Day3
 
 executable:
     main: Main.hs

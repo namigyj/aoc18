@@ -36,14 +36,14 @@ part1 = uncurry (*)
     tupsum (a,b) (c,d) = (a+c, b+d)
 
 part2 :: [String] -> String
-part2 (i:ids) = go i $ fromList ids
-  where
-    go s ss | null ss = ""
-            | otherwise = let matches = V.filter (singleDiff s) ss
-                          in
-                            if V.length matches > 0
-                            then positionalIntersect s (V.head matches)
-                            else go (V.head ss) (V.tail ss)
+part2 ids = head $ do x <- ids  -- in head we trust :pray:
+                      y <- ids
+                      case f x y of
+                        Just x -> pure x
+                        _ -> []
+                      where
+                        f a b | singleDiff a b = Just $ positionalIntersect a b
+                              | otherwise = Nothing
 
 singleDiff :: Eq a => [a] -> [a] -> Bool
 singleDiff (a:as) (b:bs) | a /= b = as == bs
